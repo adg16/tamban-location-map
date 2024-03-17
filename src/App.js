@@ -6,12 +6,12 @@ import Map from "./pages/Map";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route index element={<Home />} />
         <Route path="map" element={<Map />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
