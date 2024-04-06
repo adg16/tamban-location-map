@@ -42,8 +42,8 @@ export default function MonthDropdown() {
           <MenuItem value={70}>August</MenuItem>
           <MenuItem value={80}>September</MenuItem>
           <MenuItem value={90}>October</MenuItem>
-          <MenuItem value={110}>November</MenuItem>
-          <MenuItem value={120}>December</MenuItem>
+          <MenuItem value={100}>November</MenuItem>
+          <MenuItem value={110}>December</MenuItem>
         </Select>
       </FormControl>
     </Box>
