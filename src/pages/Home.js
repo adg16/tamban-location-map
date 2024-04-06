@@ -49,6 +49,7 @@ export default function Home() {
             size="large"
             endIcon={<ArrowForwardIosIcon />}
             sx={{
+              mb: "40px",
               minWidth: 200,
               fontSize: "18px",
               color: "#fff",
