@@ -18,7 +18,7 @@ export default function Map() {
   const { state } = useMapContext();
   const mapRef = useRef(null);
   const isSmallScreen = useMediaQuery("(max-width:600px)");
-  const mapWidth = isSmallScreen ? "92dvw" : "85dvw";
+  const mapWidth = isSmallScreen ? "92dvw" : "96dvw";
 
   useEffect(() => {
     if (mapRef.current) {
@@ -33,7 +33,11 @@ export default function Map() {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <Box
-                sx={{ textAlign: "center", paddingTop: 2, paddingBottom: 2 }}
+                sx={{
+                  textAlign: "center",
+                  paddingTop: { xs: "25px", md: "15px" },
+                  paddingBottom: { xs: "10px", md: "0px" },
+                }}
               >
                 <Typography
                   variant="h4"
@@ -51,6 +55,13 @@ export default function Map() {
                 <MonthDropdown />
               </Grid>
             )}
+            {!isSmallScreen && (
+              <Grid item xs={12}>
+                <Box>
+                  <MonthSlider />
+                </Box>
+              </Grid>
+            )}
             <Grid item xs={10}>
               <Box>
                 <MapContainer
@@ -58,7 +69,7 @@ export default function Map() {
                   center={state.location}
                   zoom={10}
                   scrollWheelZoom={false}
-                  style={{ height: "80dvh", width: mapWidth }}
+                  style={{ height: "75dvh", width: mapWidth }}
                 >
                   <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -77,13 +88,6 @@ export default function Map() {
                 </MapContainer>
               </Box>
             </Grid>
-            {!isSmallScreen && (
-              <Grid item xs={2}>
-                <Box>
-                  <MonthSlider />
-                </Box>
-              </Grid>
-            )}
           </Grid>
         </Container>
       </CssBaseline>

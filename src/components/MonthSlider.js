@@ -70,7 +70,7 @@ export default function MonthSlider() {
   };
 
   return (
-    <Box sx={{ ml: "80px", mt: "25px", height: "400px" }}>
+    <Box sx={{ mt: "-5px" }}>
       <Slider
         aria-label="Month"
         defaultValue={defaultValue}
@@ -84,7 +84,7 @@ export default function MonthSlider() {
             WebkitAppearance: "slider-vertical",
           },
         }}
-        orientation="vertical"
+        // orientation="vertical"
       />
     </Box>
   );
