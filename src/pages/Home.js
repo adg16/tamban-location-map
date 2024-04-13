@@ -27,18 +27,28 @@ export default function Home() {
                 sx={{
                   fontSize: { xs: "40px", md: "50px" },
                   color: "primary.greyDarker",
+                  mb: "-20px",
                 }}
               >
                 Hello,
               </Typography>
               <Typography
+                component="div"
                 variant="h2"
                 sx={{
-                  fontSize: { xs: "40px", md: "50px" },
+                  fontSize: { xs: "35px", md: "50px" },
                   color: "primary.greyDarker",
+                  mb: { xs: "5px", md: "-20px" },
                 }}
               >
-                welcome to Daraw!
+                welcome to{" "}
+                <Typography
+                  component="span"
+                  sx={{ fontSize: { xs: "50px", md: "60px" } }}
+                >
+                  Daraw
+                </Typography>
+                !
               </Typography>
             </Box>
           </Grid>
@@ -66,10 +76,9 @@ export default function Home() {
               sx={{
                 textAlign: { xs: "center", md: "left" },
                 paddingBottom: 2,
-                zIndex: 1,
               }}
             >
-              <Typography variant="body" sx={{ zIndex: 1 }}>
+              <Typography variant="body">
                 This is a quantitative research conducted by a group of students
                 at <b>Bulan National High School</b>. The goal of this research
                 is to provide an approximate location of the Tamban based on the
