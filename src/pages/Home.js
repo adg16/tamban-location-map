@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Grid from "@mui/material/Grid";
-import Divider from "@mui/material/Divider";
+import Link from "@mui/material/Link";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -20,38 +20,96 @@ export default function Home() {
       <CssBaseline />
       <Container maxWidth={false}>
         <Grid container spacing={2}>
-          <Grid item xs={12} md={8}>
-            <Box sx={{ textAlign: "left", paddingTop: 5, paddingBottom: 5 }}>
-            <Typography variant="h2" sx={{ fontSize: "50px", color: "primary.greyDarker" }}>
+          <Grid item xs={12} md={7} lg={8}>
+            <Box sx={{ textAlign: "left", pt: 5, pb: { xs: 0, sm: 0, md: 5 } }}>
+              <Typography
+                variant="h2"
+                sx={{
+                  fontSize: { xs: "40px", md: "50px" },
+                  color: "primary.greyDarker",
+                }}
+              >
                 Hello,
               </Typography>
-              <Typography variant="h2" sx={{ fontSize: "50px", color: "primary.greyDarker" }}>
-                welcome to Tamban Location Map!
+              <Typography
+                variant="h2"
+                sx={{
+                  fontSize: { xs: "40px", md: "50px" },
+                  color: "primary.greyDarker",
+                }}
+              >
+                welcome to Daraw!
               </Typography>
             </Box>
-            <Box sx={{ textAlign: "left", paddingBottom: 5 }}>
-              <Typography variant="body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Praesent sagittis congue quam eget pulvinar. Aenean blandit erat
-                et euismod euismod. Curabitur iaculis sapien sed purus
-                efficitur, non pretium lectus facilisis. Aliquam auctor
-                consectetur eros at convallis. Aenean lorem odio, posuere eu
-                risus vel, egestas pulvinar dolor. Vivamus elit ante, convallis
-                vitae diam et, malesuada eleifend magna. Proin eget nulla vel
-                orci consectetur bibendum id id risus. Integer interdum luctus
-                diam a vestibulum. Sed efficitur interdum rhoncus. Fusce nunc
-                magna, tincidunt ut fermentum vitae, faucibus nec orci. Ut nec
-                volutpat nulla.
+          </Grid>
+
+          <Grid item xs={12} md={5} lg={4}>
+            <Box sx={{ position: "relative", textAlign: "center" }}>
+              <Box
+                component="img"
+                sx={{
+                  position: { xs: "", sm: "", md: "absolute" },
+                  top: { xs: 0, sm: 0, md: 150, lg: 70 },
+                  right: { xs: 0, sm: 0, md: 0 },
+                  borderRadius: { xs: "300px", md: "400px", lg: "450px" },
+                  height: { xs: "300px", md: "400px", lg: "450px" },
+                  width: { xs: "300px", md: "400px", lg: "450px" },
+                }}
+                alt="tamban-bg"
+                src="/images/tamban_1.jpg"
+              />
+            </Box>
+          </Grid>
+
+          <Grid item xs={12} md={7} lg={8}>
+            <Box
+              sx={{
+                textAlign: { xs: "center", md: "left" },
+                paddingBottom: 2,
+                zIndex: 1,
+              }}
+            >
+              <Typography variant="body" sx={{ zIndex: 1 }}>
+                This is a quantitative research conducted by a group of students
+                at <b>Bulan National High School</b>. The goal of this research
+                is to provide an approximate location of the Tamban based on the
+                weather parameters experienced by the fishermen.
               </Typography>
             </Box>
-            <Box sx={{ textAlign: "left", paddingBottom: 5 }}>
+            <Box
+              sx={{ textAlign: { xs: "center", md: "left" }, paddingBottom: 2 }}
+            >
               <Typography variant="body">
-                Praesent gravida efficitur euismod. Vivamus justo nunc, dictum
-                gravida malesuada a, maximus ut nisl. Ut ac consequat nibh.
-                Praesent urna odio, pharetra tempus euismod vel, semper vel
-                nibh. Proin tempus vestibulum tellus sed accumsan. Maecenas in
-                dignissim ipsum, nec porttitor libero. Ut nec porta est. Cras
-                nec faucibus diam.
+                This website provides an interpretation of the data collected by
+                the researchers from fishermen fishing for Tamban. The location
+                they have given are approximates only. This website will show
+                the approximate location of Tamban for every month of the year.
+              </Typography>
+            </Box>
+            <Box
+              sx={{ textAlign: { xs: "center", md: "left" }, paddingBottom: 4 }}
+            >
+              <Typography variant="body">
+                By combining the wisdom of fishermen with the power of data
+                visualization, we aim to shed light on the ever-shifting world
+                of Tamban. We invite you to embark on this journey of discovery
+                and gain a deeper appreciation for these remarkable fish.
+              </Typography>
+            </Box>
+
+            <Box
+              sx={{ textAlign: { xs: "center", md: "left" }, paddingBottom: 4 }}
+            >
+              <Typography sx={{ fontSize: "11px" }}>
+                Image credits:
+                <Link
+                  underline="none"
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://businessmirror.com.ph/2018/04/16/fishing-moratorium-is-phl-doing-it-right/"
+                >
+                  BusinessMirror
+                </Link>
               </Typography>
             </Box>
             <Box sx={{ textAlign: "center" }}>
@@ -81,33 +139,19 @@ export default function Home() {
               </Button>
             </Box>
           </Grid>
-          <Grid item xs={12} md={4}>
-            <Box sx={{ position: "relative" }}>
-              <Box
-                component="img"
-                sx={{
-                  position: "absolute",
-                  // maxHeight: { xs: 342, sm: 500, md: 800 },
-                  // maxWidth: { xs: 342, sm: 500, md: 800 },
-                  top: { xs: -670, sm: -630, md: 70 },
-                  right: { xs: -68, sm: -98, md: 0 },
-                  // opacity: 0.1,
-                  // transform: "rotate(45deg)",
-                  borderRadius: "450px",
-                  height: "450px",
-                  width: "450px",
-                }}
-                alt="tamban-bg"
-                src="/images/tamban_2.jpg"
-              />
-            </Box>
-          </Grid>
         </Grid>
       </Container>
 
-      <Box sx={{ backgroundColor: "primary.mainDark", mt:"20px", pt: "30px", pb: "30px"}}>
+      <Box
+        sx={{
+          backgroundColor: "primary.mainDark",
+          mt: "20px",
+          pt: "30px",
+          pb: "30px",
+        }}
+      >
         <Grid container spacing={2}>
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12}>
             <Box
               sx={{
                 display: "flex",
@@ -115,18 +159,11 @@ export default function Home() {
                 alignItems: "center",
               }}
             >
-              <Box
-                component="img"
-                sx={{
-                  borderRadius: "200px",
-                  height: "200px",
-                  width: "200px",
-                  mb: "10px"
-                }}
-                alt="profile-pic"
-                src="/images/profile_1.jpg"
-              />
-              <Typography sx={{fontStyle:"italic"}}>Marco G. Porcado</Typography>
+              <Typography
+                sx={{ fontSize: 20, color: "primary.greyDarker", mb: 3 }}
+              >
+                The Researchers
+              </Typography>
             </Box>
           </Grid>
           <Grid item xs={12} md={3}>
@@ -143,12 +180,16 @@ export default function Home() {
                   borderRadius: "200px",
                   height: "200px",
                   width: "200px",
-                  mb: "10px"
+                  mb: "10px",
                 }}
                 alt="profile-pic"
                 src="/images/profile_1.jpg"
               />
-              <Typography sx={{fontStyle:"italic"}}>Marco G. Porcado</Typography>
+              <Typography
+                sx={{ fontStyle: "italic", color: "primary.greyDarker" }}
+              >
+                Marco G. Porcado
+              </Typography>
             </Box>
           </Grid>
           <Grid item xs={12} md={3}>
@@ -165,12 +206,16 @@ export default function Home() {
                   borderRadius: "200px",
                   height: "200px",
                   width: "200px",
-                  mb: "10px"
+                  mb: "10px",
                 }}
                 alt="profile-pic"
                 src="/images/profile_1.jpg"
               />
-              <Typography sx={{fontStyle:"italic"}}>Marco G. Porcado</Typography>
+              <Typography
+                sx={{ fontStyle: "italic", color: "primary.greyDarker" }}
+              >
+                Marco G. Porcado
+              </Typography>
             </Box>
           </Grid>
           <Grid item xs={12} md={3}>
@@ -187,12 +232,42 @@ export default function Home() {
                   borderRadius: "200px",
                   height: "200px",
                   width: "200px",
-                  mb: "10px"
+                  mb: "10px",
                 }}
                 alt="profile-pic"
                 src="/images/profile_1.jpg"
               />
-              <Typography sx={{fontStyle:"italic"}}>Marco G. Porcado</Typography>
+              <Typography
+                sx={{ fontStyle: "italic", color: "primary.greyDarker" }}
+              >
+                Marco G. Porcado
+              </Typography>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <Box
+                component="img"
+                sx={{
+                  borderRadius: "200px",
+                  height: "200px",
+                  width: "200px",
+                  mb: "10px",
+                }}
+                alt="profile-pic"
+                src="/images/profile_1.jpg"
+              />
+              <Typography
+                sx={{ fontStyle: "italic", color: "primary.greyDarker" }}
+              >
+                Marco G. Porcado
+              </Typography>
             </Box>
           </Grid>
         </Grid>

@@ -30,7 +30,7 @@ export default function Map() {
 
   useEffect(() => {
     if (mapRef.current) {
-      mapRef.current.setView(state.location, 10);
+      mapRef.current.setView(state.location[0], 10);
     }
   }, [state.location]);
 
@@ -53,7 +53,7 @@ export default function Map() {
             },
           }}
         >
-          <HomeIcon sx={{ color: "#fff", fontSize: "40px" }} />
+          <HomeIcon sx={{ color: "#fff", fontSize: "30px" }} />
         </IconButton>
         <Container maxWidth={false}>
           <Grid container spacing={2}>
@@ -93,7 +93,7 @@ export default function Map() {
               <Box>
                 <MapContainer
                   ref={mapRef}
-                  center={state.location}
+                  center={state.location[0]}
                   zoom={10}
                   scrollWheelZoom={false}
                   style={{ height: "75dvh", width: mapWidth }}
@@ -103,14 +103,16 @@ export default function Map() {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                   />
                   <MarkerLayer>
-                    <Marker position={state.location}>
-                      <PulsatingIcon
-                        iconSize={40}
-                        fillColor="red"
-                        color="red"
-                        heartbeat={1}
-                      />
-                    </Marker>
+                    {state.location.map((loc, index) => (
+                      <Marker key={index} position={loc}>
+                        <PulsatingIcon
+                          iconSize={40}
+                          fillColor="red"
+                          color="red"
+                          heartbeat={1}
+                        />
+                      </Marker>
+                    ))}
                   </MarkerLayer>
                 </MapContainer>
               </Box>

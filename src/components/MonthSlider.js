@@ -70,7 +70,7 @@ export default function MonthSlider() {
   };
 
   return (
-    <Box sx={{ mt: "-5px" }}>
+    <Box sx={{ mt: "-5px", ml: 2, mr: 2}}>
       <Slider
         aria-label="Month"
         defaultValue={defaultValue}
