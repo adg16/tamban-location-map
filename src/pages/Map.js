@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { MapContainer, TileLayer } from "react-leaflet";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
@@ -13,12 +14,19 @@ import Grid from "@mui/material/Grid";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useMapContext } from "#contexts/MapContext";
 import PulsatingIcon from "#components/PulsatingIcon";
+import HomeIcon from "@mui/icons-material/Home";
+import IconButton from "@mui/material/IconButton";
 
 export default function Map() {
+  const navigate = useNavigate();
   const { state } = useMapContext();
   const mapRef = useRef(null);
   const isSmallScreen = useMediaQuery("(max-width:600px)");
   const mapWidth = isSmallScreen ? "92dvw" : "96dvw";
+
+  const goToHome = () => {
+    navigate("/");
+  };
 
   useEffect(() => {
     if (mapRef.current) {
@@ -29,6 +37,24 @@ export default function Map() {
   return (
     <React.Fragment>
       <CssBaseline>
+        <IconButton
+          onClick={() => goToHome()}
+          aria-label="Home"
+          sx={{
+            color: "#fff",
+            borderColor: "primary.main",
+            backgroundColor: "primary.main",
+            position: "fixed",
+            boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.4)",
+            margin: "25px 8px 8px 8px",
+            "&:hover": {
+              backgroundColor: "primary.mainDark",
+              borderColor: "primary.mainDark",
+            },
+          }}
+        >
+          <HomeIcon sx={{ color: "#fff", fontSize: "40px" }} />
+        </IconButton>
         <Container maxWidth={false}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
@@ -44,6 +70,7 @@ export default function Map() {
                   sx={{
                     fontSize: { xs: "25px", md: "30px" },
                     color: "primary.mainDark",
+                    marginLeft: { xs: "30px", md: "0px" },
                   }}
                 >
                   Tamban Location Map
